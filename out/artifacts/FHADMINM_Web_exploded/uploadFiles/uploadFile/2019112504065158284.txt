@@ -1,0 +1,40 @@
+hosts：
+192.168.1.93    erptest.honglicheng.com erptest
+
+OS账号口令：orapbd/Hlcprod!23  applpbd/Hlcprod!23
+URL：
+http://erptest.honglicheng.com:8010
+应用账号口令：sysadmin/sysadmin2018
+
+TNS:
+TESTPROD =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.93)(PORT = 1531))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = PROD)
+    )
+  )
+
+数据库账号口令： apps/appsprod system/manager
+
+
+完成时间：2018-09-26
+
+ERP系统开发测试环境的设置及账号
+1、设置hosts：
+C:\Windows\System32\drivers\etc\hosts
+添加：
+192.168.1.93    erptest.honglicheng.com erptest
+
+2、通过控制面板--程序--Java--安全--例外站点中添加
+http://erptest.honglicheng.com:8010
+
+3、在IE浏览器中设置兼容性视图设置，添加http://erptest.honglicheng.com
+
+4、在浏览器中，使用http://erptest.honglicheng.com:8010进行登录
+
+5、用户名为自己的工号和密码登录
+TESTUSER1/TESTUSER1
+TESTUSER2/TESTUSER2

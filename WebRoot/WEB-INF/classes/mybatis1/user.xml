@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.dao.UserDao" >
+
+
+      <select id="getUserByUserID"  
+           resultType="com.fh.entity.User">
+          SELECT id ,name,userName,roleType,create_time FROM domain_user where status!=-1 and   ID = #{userID}
+      </select>
+      
+      <select id="getUserByUserUserName"  
+           resultType="com.fh.entity.User">
+          SELECT id ,name,userName,roleType,create_time FROM domain_user where status!=-1 and   userName = #{userName}
+      </select>
+      
+      
+       <select id="getList"  resultType="com.fh.entity.User">
+          SELECT  id ,name,roleType,userName,create_time FROM domain_user where    status!=-1 
+          <if test="name!=null   ">
+			and content like "%"#{name}"%"  
+		  </if>
+          </select>
+
+           
+          <insert id="add" parameterType="com.fh.entity.User"  useGeneratedKeys="true" keyProperty="id">
+		insert into domain_user (name, userName,roleType,status,create_time )
+		 values(#{name},#{userName},#{roleType},0,#{create_time})
+	</insert>
+	
+	<update id="update" parameterType="com.fh.entity.User">
+		UPDATE domain_user SET name = #{name},roleType=#{roleType} WHERE  status!=-1 and  id = #{id}
+	</update>
+	
+	<!-- 删除数据 -->
+	<delete id="delete"  >
+		UPDATE domain_user SET status = -1 WHERE id IN
+		<foreach collection="list" index="index" item="id" open="("
+			separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+      
+</mapper>

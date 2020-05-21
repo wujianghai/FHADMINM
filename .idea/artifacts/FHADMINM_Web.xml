@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="FHADMINM:Web">
+    <output-path>$PROJECT_DIR$/out/artifacts/FHADMINM_Web</output-path>
+    <root id="archive" name="FHADMINM_Web.war">
+      <element id="artifact" artifact-name="FHADMINM:Web exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <resource id="authClassInsert"  >
+        <![CDATA[
+         INSERT INTO `authority_class`(name,description,packageName,className,scan_status)  
+         VALUES(?,?,?,?,1);
+	        ]]>
+    </resource>
+    
+    <resource id="authClassUpdate"  >
+        <![CDATA[
+         update   `authority_class` set name=?,description=?,packageName=?,className=?,scan_status=1 where id=?;
+	        ]]>
+    </resource>
+   
+    <resource id="authResourceInsert"  >
+        <![CDATA[
+       INSERT INTO `authority_resource`(name,description,packageName,className,requestMapping,methodName,ParameterTypes,scan_status) 
+         VALUES(?,?,?,?,?,?,?,1);
+	        ]]>
+    </resource>
+    
+    <resource id="authResourceUpdate"  >
+        <![CDATA[
+       update   `authority_resource` 
+       set name=?,description=?,packageName=?,className=?,requestMapping=?,methodName=?,ParameterTypes=?,scan_status=1
+       where id=?;
+	        ]]>
+    </resource>
+    
+</root>
